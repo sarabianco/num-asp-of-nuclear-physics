@@ -17,3 +17,4 @@ The code is written on Python 3.9.4. The following libraries are used:
 * numpy v. 1.22.24
 * matplotlib.pyplot v. 3.4.1
 * scipy v. 1.6.3
+* tabulate v. 0.8.10
