@@ -4,22 +4,22 @@ In this repository you can find the source code, the resulting plot and the refe
 
 ### Repository 
 .
-├── plots                     
-|   ├── data.csv                        # Final dataset
-├── resources                      
-|   ├── crashdata2021.csv               # Original dataset about car accidents
-|   ├── vehiclecrashdata2021.csv        # Original dataset about vehicles and drivers involved      
-├── src                      
-|   ├── Road_Accidents_BN.ipynb         # Bayesian Network implementation and analysis
-|   ├── dataset_preprocessing.py        # .py file containing the preprocessing function
+├── Polonium Project                     
+|   ├── plots                                                   # Resulting plots
+|   |   ├── Bismuth-209 concentration.png
+|   |   ├── Bismuth-210 concentration.png
+|   |   ├── Polonium-210 concentration.png
+|   ├── src
+|   |   ├── Polonium_problem_project.py                         # Code to run
+|   ├── Masterproef_Maren_Vranckx.pdf                           # Reference of the project
+|   ├── Theoretical and Numerical Aspects of NP - Project.pdf   # Presentation of the project
 ├── README.md
-├── Report.pdf                          # Report of the whole project
 
 Inside 'Project' you can find different files.
 The folder [src](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/src) contains the code to run. [plots](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/plots) contains the resulting plots, which you can reobtain by running the code. [Masterproef_Maren_Vranckx.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Masterproef_Maren_Vranckx.pdf) is the reference to the Polonium problem [p. 4-6]. [Theoretical and Numerical Aspects of NP - Project.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Theoretical%20and%20Numerical%20Aspects%20of%20NP%20-%20Project.pdf) is a brief presentation of the whole project.
 
 ### Numerical methods
-The matrix exponenential method is an iterative method used to compute the solutions to the system of ODE. It computes the solution by using a constant matrix and by exponentiating it. The results are collected in an array.
+The matrix exponenential method is an iterative method used to compute the solutions to the system of ODE. It computes the solution by using a constant matrix and by exponentiating it. The results are collected in an array. Python uses the function 'scipy.linalg.expm' which is essentially a Pade approximation with a variable order that is decided based on the array data.
 
 ### Plots
 The plots show the change in nuclide concentration over time of Bi-209, Bi-210 and Po-210.
