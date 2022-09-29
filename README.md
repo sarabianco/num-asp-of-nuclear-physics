@@ -3,7 +3,19 @@
 In this repository you can find the source code, the resulting plot and the reference to the polonium problem, plus a brief presentation of the project. The matrix exponential method is implemented on Python 3.9.4 to solve the system of Bateman equations in order to find the variation over time of the nuclides concentration. In particular the production of Polonium-210 is studied as presented in the file 'Masterproef_Maren_Vranckx.pdf'
 
 ### Repository 
-Inside 'New Project' you can find different files.
+.
+├── plots                     
+|   ├── data.csv                        # Final dataset
+├── resources                      
+|   ├── crashdata2021.csv               # Original dataset about car accidents
+|   ├── vehiclecrashdata2021.csv        # Original dataset about vehicles and drivers involved      
+├── src                      
+|   ├── Road_Accidents_BN.ipynb         # Bayesian Network implementation and analysis
+|   ├── dataset_preprocessing.py        # .py file containing the preprocessing function
+├── README.md
+├── Report.pdf                          # Report of the whole project
+
+Inside 'Project' you can find different files.
 The folder [src](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/src) contains the code to run. [plots](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/plots) contains the resulting plots, which you can reobtain by running the code. [Masterproef_Maren_Vranckx.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Masterproef_Maren_Vranckx.pdf) is the reference to the Polonium problem [p. 4-6]. [Theoretical and Numerical Aspects of NP - Project.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Theoretical%20and%20Numerical%20Aspects%20of%20NP%20-%20Project.pdf) is a brief presentation of the whole project.
 
 ### Numerical methods
