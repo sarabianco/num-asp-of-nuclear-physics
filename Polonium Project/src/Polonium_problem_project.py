@@ -15,7 +15,7 @@ def matrix_exponential_method(U_0,dt,T,A):
 
     T = (int) number of steps
 
-    A = (array) coefficients' matrix of the ODE system
+    A = (array) square matrix containing the coefficients of the ODE system
 
     Returns a matrix in which each column contains the points solution to a different function of the ODE system
     '''
@@ -32,30 +32,68 @@ def matrix_exponential_method(U_0,dt,T,A):
 
     return u
 
-def print_results(T, Bi209, Bi210, Po210):
-        #Print the results
+#=========================================== Results and Plots  ====================================================
+
+def print_results(N, array1, array2, array3, head1, head2, head3, head4):
+    '''
+    N = (array) first column
+    
+    array1 = (array) second column
+    
+    array2 = (array) third column
+
+    array3 = (array) fourth column
+
+    head1 = (string) title first column
+
+    head2 = (string) title second column
+
+    head3 = (string) title third column
+
+    head4 = (string) title fourth column
+    '''
     table = []
 
-    for i in range(T):
-        table.append([i, Bi209[i], Bi210[i], Po210[i]])
+    for i in range(N):
+        table.append([i, array1[i], array2[i], array3[i]])
     
     print("Results")
     print(" ")
-    print(tabulate(table, headers=['t', 'Bismuth-209', 'Bismuth-210', 'Polonium-210']))
+    print(tabulate(table, headers=[head1, head2, head3, head4]))
     print(" ")
 
-def plot(i,y_min,y_max,y,title):
+def plot(i,y_min,y_max,y,xmin,xmax,xlab,ylab,title):
+    '''
+    i = (int) input different int number to plot on different canvas
+    
+    y_min = (int) lower limit for the y axis
+
+    y_min = (int) upper limit for the y axis
+
+    y = (array) plot y using x as index array 0..N-1, where N is the dimension of y
+
+    x_min = (int) lower limit for the x axis
+
+    x_max = (int) lower limit for the x axis
+
+    xlab = (string) label on x axis
+
+    ylab = (string) label on y axis
+
+    title = (string) figure title
+    '''
+
     plt.figure(i)
     plt.ylim(y_min,y_max)
-    plt.xlim(0, 400)
+    plt.xlim(xmin, xmax)
     plt.plot(y, '#000080')
     plt.title(title)
-    plt.xlabel('Time (days)')
-    plt.ylabel('Nuclide concentration')
+    plt.xlabel(xlab)
+    plt.ylabel(ylab)
     plt.ticklabel_format(axis = "y", style = "sci", scilimits=(0,0))
     plt.tick_params('both', direction = 'in')
     
-#================================================ The Polonium Problem =============================================
+#================================================== The Polonium Problem ===============================================
 
 def polonium_problem():
 
@@ -87,12 +125,17 @@ def polonium_problem():
     Po210 = bateman_sol[:,2]
 
     #Print results
-    print_results(T, Bi209, Bi210, Po210)
+    print_results(T, Bi209, Bi210, Po210, 't', 'Bismuth-209', 'Bismuth-210', 'Polonium-210')
 
     # Plots 
-    plot(0,69580.0e-8,69600.0e-8,Bi209,'Bismuth-209 concentration')
-    plot(1,0,8.5e-10,Bi210,'Bismuth-210 concentration')
-    plot(2,0,2e-8,Po210,'Polonium-210 concentration')
+    xmin = 0
+    xmax = 400
+    xlabel = 'Time (days)'
+    ylabel = 'Nuclide concentration'
+
+    plot(0,69580.0e-8,69600.0e-8, Bi209, xmin, xmax, xlabel, ylabel,'Bismuth-209 concentration')
+    plot(1,0,8.5e-10,Bi210, xmin, xmax, xlabel, ylabel,'Bismuth-210 concentration')
+    plot(2,0,2e-8,Po210, xmin, xmax, xlabel, ylabel,'Polonium-210 concentration')
 
     plt.show()
 
