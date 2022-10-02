@@ -1,6 +1,6 @@
 # Theoretical and numerical aspects of Nuclear Physics project
 
-In this repository you can find the source code, the resulting plot and the reference to the polonium problem, plus a brief presentation of the project. The matrix exponential method is implemented on Python 3.9.4 to solve the system of Bateman equations in order to find the variation over time of the nuclides concentration. In particular the production of Polonium-210 is studied as presented in the file 'Masterproef_Maren_Vranckx.pdf'
+In this repository you can find the source code of a Bateman solver. Any system of Bateman Equation can potentially be solved using this code. As an example, you can find the resulting plot and the reference to the polonium problem, plus a brief presentation of the project. The matrix exponential method is implemented on Python 3.9.4 to solve the system of Bateman equations in order to find the variation over time of the nuclides concentration. In particular the production of Polonium-210 is studied as presented in the file 'Masterproef_Maren_Vranckx.pdf'
 
 ### Repository 
 ```
@@ -11,13 +11,22 @@ In this repository you can find the source code, the resulting plot and the refe
 |   |   ├── Bismuth-210 concentration.png
 |   |   ├── Polonium-210 concentration.png
 |   ├── src
-|   |   ├── Polonium_problem_project.py                         # Code to run
-|   ├── Masterproef_Maren_Vranckx.pdf                           # Reference of the project
+|   |   ├── bateman_solver.py                                   # Code to run
+|   ├── data
+|   |   ├── Polonium_problem.txt                                # Input .txt file containing the data for the Polonium Problem
+|   ├── results
+|   |   ├── Polonium_results.txt                                # Output .txt file containing the results to the Polonium Problem
+|   ├── Masterproef_Maren_Vranckx.pdf                           # Reference to the project
 |   ├── Theoretical and Numerical Aspects of NP - Project.pdf   # Presentation of the project
 └── README.md
 ```
-Inside 'Project' you can find different files.
-The folder [src](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/src) contains the code to run. [plots](https://github.com/sarabianco/num-asp-of-nuclear-physics/tree/main/New%20Project/plots) contains the resulting plots, which you can reobtain by running the code. [Masterproef_Maren_Vranckx.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Masterproef_Maren_Vranckx.pdf) is the reference to the Polonium problem [p. 4-6]. [Theoretical and Numerical Aspects of NP - Project.pdf](https://github.com/sarabianco/num-asp-of-nuclear-physics/blob/main/New%20Project/Theoretical%20and%20Numerical%20Aspects%20of%20NP%20-%20Project.pdf) is a brief presentation of the whole project.
+
+### Usage
+In order to use the code, simply open a terminal in the correspondent working directory and run:
+```
+$ python Polonium_problem_project.py
+```
+By launching the .py file, an output file to visualize the solutions will be automatically created and saved into `results`. Plots will be shown on screen and the user can save them. The user is asked to answer some questions that will appear on the terminal.
 
 ### Numerical methods
 The matrix exponenential method is an iterative method used to compute the solutions to the system of ODE. It computes the solution by using a constant matrix and by exponentiating it. The results are collected in an array. Python uses the function 'scipy.linalg.expm' which is essentially a Pade approximation with a variable order that is decided based on the array data.
@@ -30,4 +39,3 @@ The code is written on Python 3.9.4. The following libraries are used:
 * numpy v. 1.22.24
 * matplotlib.pyplot v. 3.4.1
 * scipy v. 1.6.3
-* tabulate v. 0.8.10
