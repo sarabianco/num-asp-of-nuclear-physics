@@ -141,7 +141,7 @@ def plot(i,limit,y,xlab,ylab,title, y_min=None,y_max=None,xmin = None,xmax=None)
     plt.ticklabel_format(axis = "y", style = "sci", scilimits=(0,0))
     plt.tick_params('both', direction = 'in')
     
-#================================================== The Polonium Problem ===============================================
+#================================================== Bateman solver ===============================================
 
 def bateman_solver():
 
