@@ -1,7 +1,6 @@
 import numpy as np
 from numpy import *
 import matplotlib.pyplot as plt
-import scipy
 from scipy import linalg
 import csv
 
@@ -146,7 +145,7 @@ def plot(i,limit,y,xlab,ylab,title, y_min=None,y_max=None,xmin = None,xmax=None)
 
 def bateman_solver():
 
-    print("Insert the name of the file with the extension")
+    print("Insert the name of the .txt data file with the extension")
     filename = str(input())
     T, init_values, bateman_matrix = readfile("../data/" + filename)
     
