@@ -27,6 +27,15 @@ In order to use the code, simply open a terminal in the correspondent working di
 $ python Polonium_problem_project.py
 ```
 By launching the .py file, an output file to visualize the solutions will be automatically created and saved into `results`. Plots will be shown on screen and the user can save them. The user is asked to answer some questions that will appear on the terminal.
+In `data` you have to put the data of the problem using the following format
+
+```
+T = value
+initial_values = [value0, value1, .., valuen]
+bateman_matrix = [value00, value01, .., value0n; value10, value11, .., value1n; ..; valuen0, valuen1, .., valuenn]
+```
+In particular, *T* is the time of the simulation, *initial_values* is an array containing the initial values of the nuclides in the system of Bateman equation and *bateman_matrix* is the Bateman matrix of the problem.
+The folder `data` contains an example of the input file.
 
 ### Numerical methods
 The matrix exponenential method is an iterative method used to compute the solutions to the system of ODE. It computes the solution by using a constant matrix and by exponentiating it. The results are collected in an array. Python uses the function 'scipy.linalg.expm' which is essentially a Pade approximation with a variable order that is decided based on the array data.
