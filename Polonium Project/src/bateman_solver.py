@@ -36,6 +36,9 @@ def matrix_exponential_method(U_0,dt,T,A):
 #=========================================== Read File  ====================================================
 
 def readfile(filename):
+    '''
+    filename = (str) Input the name of the file
+    '''
     # Open file
     file = open(filename, 'r')
 
@@ -90,7 +93,7 @@ def write_file(filename, columns, rows, file_content):
     line = ['T']
 
     for i in range(columns):
-        print("Insert title column", i+1,". Note that the first column is the solution to first equation of the Bateman system.")
+        print("Insert title column", i+1,". Note that column", i+1, " is the solution to equation", i+1, "of the Bateman system.")
         name = str(input())
         line.append("%s" % name) 
 
