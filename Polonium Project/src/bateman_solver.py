@@ -1,8 +1,7 @@
-from mimetypes import init
 import numpy as np
 from numpy import *
 import matplotlib.pyplot as plt
-import scipy as sp
+import scipy
 from scipy import linalg
 import csv
 
