@@ -34,8 +34,12 @@ T = value
 initial_values = [value0, value1, .., valuen]
 bateman_matrix = [value00, value01, .., value0n; value10, value11, .., value1n; ..; valuen0, valuen1, .., valuenn]
 ```
-In particular, *T* is the time of the simulation, *initial_values* is an array containing the initial values of the nuclides in the system of Bateman equation and *bateman_matrix* is the Bateman matrix of the problem.
+In particular, *T* is the time of the simulation, *initial_values* is an array containing the initial values of the nuclides in the system of Bateman equation and *bateman_matrix* is the Bateman matrix of the problem. 
+Is important that T is written as an integer number. If you have a period of time written in scientific notation it's suggested to write the integer part of this number on the .txt file and specify the order of magnitude in the label of the x axis.
 The folder `data` contains an example of the input file.
+
+### Output
+By running this code, the terminal will ask you whether you want to save the results on a .txt file. If you answer yes, a .txt file will be created with the name you are asked to insert. After this, the plots of the nuclide concentration over time will be printed.
 
 ### Numerical methods
 The matrix exponenential method is an iterative method used to compute the solutions to the system of ODE. It computes the solution by using a constant matrix and by exponentiating it. The results are collected in an array. Python uses the function 'scipy.linalg.expm' which is essentially a Pade approximation with a variable order that is decided based on the array data.
